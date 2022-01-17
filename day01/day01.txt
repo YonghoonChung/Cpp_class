@@ -1,0 +1,47 @@
+email: yoonkwanghee1225@naver.com
+제목 : C++ 특강
+Java / C++ (객체지향)
+    둘의 차이가 매우 크다
+
+    클래스, 추상, 다양성
+
+    절차지향 -> 흐름만 알면 된다
+    객체지향 -> 1. 사용자 관점 2. 개발자 관점 (둘의 적절한 비율)
+
+접근제어지시자
+    public
+    private
+    protected
+
+    멤버 변수를 위해(c++에서 매우 많이 사용한다)
+
+header file
+    1. C/C++ 에서 제공하는 파일
+        #include <stdio.h>, <iostream>
+    2. 사용자 정의 헤더파일 
+        #include myheader.h -> #include "myheader.h" 
+            <> 는 제공자만 가능함
+
+        0113.c
+        myHeader.h
+
+#pragma once ->
+
+헤더파일 기능:
+    소스를 실해전에 규약을 지정한다
+
+    헤더파일은 매우 중요하다
+
+함수 위에 include를 넣어야한다.
+
+# (전처리 지시자)-> 0순위
+그 전에 사용하는 것
+    #define을 선언함 -> 무엇 정의하냐에 따라 사용/선언하는 위치가 바뀐다.
+
+모든 언어(except Python)-> main을 가져야한다.
+
+C++
+    #include<iostream>
+
+    std::cout<< 로 출력 // scope 연산자
+    std::endl; 로 마무리한다.

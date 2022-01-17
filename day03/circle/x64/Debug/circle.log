@@ -1,0 +1,11 @@
+﻿  Circle.cpp
+  employee.cpp
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(22,3): error C2248: 'Employee::salary': private 멤버('Employee' 클래스에서 선언)에 액세스할 수 없습니다.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(8): message : 'Employee::salary' 선언을 참조하십시오.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(5): message : 'Employee' 선언을 참조하십시오.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(23,3): error C2248: 'Employee::age': private 멤버('Employee' 클래스에서 선언)에 액세스할 수 없습니다.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(9): message : 'Employee::age' 선언을 참조하십시오.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(5): message : 'Employee' 선언을 참조하십시오.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(24,23): error C2248: 'Employee::getSalary': private 멤버('Employee' 클래스에서 선언)에 액세스할 수 없습니다.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(11): message : 'Employee::getSalary' 선언을 참조하십시오.
+D:\KoreaIT\C++\workspace\day03\circle\employee.cpp(5): message : 'Employee' 선언을 참조하십시오.

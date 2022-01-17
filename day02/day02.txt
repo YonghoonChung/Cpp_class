@@ -1,0 +1,57 @@
+C++ : struct + 함수의 집합
+    구조체 -> 자료구조는 사용자가 새로운 데이터 형을 만드는 것이다.
+
+    int a; // 메모리에 들어간다
+
+    int a[3] -> 정수형만 받는 배열
+        // 메모리에 들어간다
+
+    struct a{ // 메모리에 안들어간다
+        int b;
+        char c;
+        char ch[3];
+    };
+    struct a a1;
+    
+    구조체 a는 8byte이다.
+        하지만 이때 사용하다가 메모리가 남으면 넘겨줄수있다.
+
+    padding -> 메모리를 효율적으로 사용한다.
+
+    사용자 관점이 아닌 개발자 관점이다.
+
+#include <iostream> // 전처리 지시자
+int main(){ // 메인 함수
+    std::cout << "Hello" << std::endl; // printf
+    //std-> 스코프 연산자
+    // :/:: -> 영역
+    return 0; // 1. 정상 종료 2. 값
+}
+
+int main(void){
+int main(int argc, char* argv[]){
+    argc, argv, args -> argument(매개변수)
+
+메소드 vs 함수
+    자바에서는 메소드라고 쓴다. 왜 그럴까?
+    음... 상관 없다고 한다.
+
+객체(object)
+    구조체?
+    눈에 보이는 사물들을 객체이다.
+    구체화 하여 구현하는 것
+    표현(상태) + 동작
+
+object(객체,기체) : 모든 사물
+object : 상태(멤버 필드, 변수, 속성) + 행동(멤버 메소드, 함수)
+    멤버 메소드를 움직이는 애는 함수가 움직인다.
+    . (도트 연산자)
+
+struct -> 변수만
+    struct car c;
+
+class -> 멤버변수 + 메소드 
+    Car car;
+    . 도트 연산자 사용한다
+    public: -> like python
+
