@@ -1,0 +1,84 @@
+접근 지정자
+    1. private (default) (완전 비공개)
+    2. protected (경우에 따라 멤버가 숨겨진다, 상속관계에서 사용)
+    3. public(외부에 클래스 멤버 공개)
+
+class 자식 클래스 : 부모 클래스
+
+부모 클래스 : 멤버 필드 / 멤버 메소드
+
+자식 클래스 : 멤버 필드 / 멤버 메소드
+    새로운 기능의 클래스가 만들어진다
+    ~ is a ~ ex) 사람은 동물이다 사람 : 자식, 동물 : 부모
+
+Upcasting/Downcasting
+    Upcasting   : 자식에서 부모, 자식이 부모처럼 사용하는 것
+    Downcasting : 부모에서 자식, 
+
+    ie. casting -> 형변환
+
+부모 : Ani
+자식 : Dog
+    class Dog : public Ani{
+        Dog dog = Dog()
+        ↓
+        Dog dog = Ani(); //Upcasting // 결국 user는 부모가 사용한줄 안다.
+    }
+
+    ★은닉화★
+
+private : 상속 관계에서 자식이 부모 멤버 필드 접근 허용 X
+
+C++ : 다중 상속 가능
+Java : 다중 상속 불가능 
+
+    classA{
+        
+    };
+
+    classB{
+        
+    };
+
+    class1 {
+        
+    };
+
+    classA : public class1{
+
+    };
+
+    int main(void){ // 클래스 객체의 컨트롤
+
+    }
+
+is a 관계를 성립하자
+
+인터페이스 -> 리모컨
+
+구조체의 태그명 : 구조체의 이름
+
+구조체 vs 클래스
+    구조체 : default는 public이다
+    클래스 : default는 private이다
+
+    왜 반대 개념일까? -> 구조체는 사용자 정의 데이터형, 누구나다 접근해야 한다.
+
+static -> 
+    C : 전역변수처럼 사용, 사라지지 않는다.
+    C++ : 정적 변수. 외부에서 선언한다. 
+        클래스당 오직 한개 밖에 존재한다
+            초기화와 관련
+    
+    정적멤버변수는 클래스에 의해 
+    메모리 주소를 공유한다
+
+CTest() // 생성자, 객체 필드 초기화를 해준다
+    CTest() : m_C1(1){ // m_C1 = 1
+	}
+const (한정자) -> 값을 못바꿔주므로 처음에 초기화 해주어야 한다.
+const int m_C2 = 2;
+    // 클래스 내부 초기화
+
+static 선언과 non-static 선언 멤버에 대한 클래스 정의 내부 초기화 
+    객체가 초기화 되는데 
