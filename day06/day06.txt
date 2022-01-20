@@ -1,0 +1,119 @@
+this (포인터)
+
+    class Sample{
+    public:
+        ...
+        void showTest();
+        ...
+    private:
+        int test;
+        ...
+    };
+
+이해하기
+    void Sample::setValue(double inValue){
+        mValue = inValue;
+        /*
+        inValue -> 멤버 함수
+        mValue -> 객체
+        */
+    }
+
+    void Sample::setValue(double value){
+        //value = value; //this를 안쓰면 어떤 것인지 모른다.
+        //this는 호출을 가리키는 포인터의 이름이다.
+        //자신이 객체가 되는 것이 아니다!!!!!
+        this->value = value;
+        /*
+        객체를 가리키는 value(왼쪽)는 항상 this가 hidden으로 온다.
+        */
+    }
+
+멤버 함수 showTest() 정의하는 방법
+    1. 이 멤버가 클래스 것이냐
+    2. 아니냐
+    void Sample::showTest(){
+        cout << (this->)test;
+    }
+    
+    void Sample::showTest(){
+        cout << this->test;
+    }
+
+this는 객체이다(자바)
+    그 객체를 가리키는 포인터이다.
+
+    호출 객체의 이름 X
+    호출 객체를 가리키는 포인터의 이름
+    객체를 가리키는 포인터 연산자?
+
+자바 : this.a
+C++ : this->a 
+    그래서 this 포인터라고 부르는 것이 바람 직하다.
+
+∴ this 포인터 : 호출하는 객체를 가리키는 포인터이다.
+------------------------------------------------------------
+
+Circle::Circle() {
+    radius = 1;
+}
+Circle::Circle(double radius) {
+    this->radius = radius; // (*this).radius = radius;
+    // 객체에 있는 radius 데이터필드를 참조하기 위하여 this->를 사용한다.
+}
+
+double Circle::getArea() {
+    return radius * radius * 3.14159;
+}
+
+double Circle::getArea() {
+    return radius;
+}
+
+void Circle::setRadius(double radius) {
+    this->radius = (radius >= 0) ? radius : 0;
+}
+
+get vs set
+    set은 재정의한다
+
+하나의 클래스는 한개 이상의 객체가 존재한다 -> O
+클래스가 가진 객체에서는 공유가 가능하다 -> o 
+멤버함수는 클래스 객체에 의해서 공유가능(호출)하다 -> O
+    즉 멤버함수를 쓸때 누가 호출하는 지 알아야한다.
+    하지만 누가 호출했는지 안알려준다. 그래서 함수에서는 누가 불렀는지 모른다.
+    그래서 객체의 주소를 준다 -> this! (함수 입장)
+
+-------------- class8.cpp-------------
+. : 직접 멤버 연산자 (직접 접근)
+-> : 간접 멤버 연산자 (간접 접근)
+-------------- class9.cpp-------------
+
+-------------- class10.cpp-------------
+static const!!
+멤버 함수 기준은 클래스의 객체
+
+정적 
+    정적 멤버 데이터
+    정적 멤버 함수 (C++에서는 전역함수라고도 부른다)
+        객체를 기준으로 호출하지 않는다. (주소를 숨긴다) 
+        this 사용불가 (함수 내부에서 this를 사용하지 않는다.)
+        객체의 멤버에 접근 불가능하다 
+            why?
+            정적멤버 함수는 클래스의 소속되기 때문이다.
+
+-------------- class11.cpp-------------
+정적 멤버 함수 사용법 3가지
+1.  CTest t;
+    t.SFunc();		
+
+2.  CTest* pT = &t;
+    pT->SFunc();	
+
+3.  CTest::SFunc();	// 이게 제일 좋은 방법이다. 
+
+어떤 툴은 1번과 2번은 접근 못할수도 있다
+
+-------------- class12.cpp-------------
+
+
